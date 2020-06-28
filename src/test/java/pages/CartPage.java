@@ -11,10 +11,12 @@ public class CartPage {
     }
 
     public String getProductText() {
+        baseFunc.wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("detailed-cart-item__name-link")));
         return baseFunc.findElement(By.className("detailed-cart-item__name-link")).getText();
     }
 
     public String getProductQuantity() {
+        baseFunc.wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("cart_item[quantity]")));
         return baseFunc.findElement(By.name("cart_item[quantity]")).getAttribute("value");
     }
 
